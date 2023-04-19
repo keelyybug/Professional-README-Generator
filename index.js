@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('generateMarkdown');
+const generateMarkdown = require('./generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
 {//10
@@ -71,7 +71,7 @@ const questions = [
 },
 {//5
     type:'input',
-    message: 'Who worked on this project with you? Format your answers as Name[githubusername](link to their github).',
+    message: 'What are some contribution guidlines for others looking to use your project',
     name: 'credit',
     validate: creditInput =>{
         if (creditInput) {
@@ -108,7 +108,7 @@ const questions = [
         }
     }
 },
-{//6
+{//6                     LICENSE
     type:'checkbox',
     message: 'Choose a license for your project (required).',
     name: 'license',
@@ -122,7 +122,7 @@ const questions = [
         }
     }
 },
-{//9
+{//9                   TEST
     type:'input',
     message: 'How do you test your project?',
     name: 'test',
@@ -134,11 +134,24 @@ const questions = [
             return false;
         }
     }
-}
+},
+{
+    type: 'input',
+    name: 'contribution',
+    message: 'Please explain how other developers may contribute to your project.',
+    validate: contributionInput => {
+      if (contributionInput) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(data) {
+const fileName = './output/README.md';
     fs.writeFile(fileName, data, (err)=>{
         if (err) 
             return console.log('Sorry, there was an error: ' + err);
@@ -148,9 +161,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
    inquirer.prompt(questions)
-   .then(function(userInput){
-        console.log(userInput)
-        writeToFile('README.md', generateMarkdown(userInput))
+   .then((data)=>{
+        console.log(data)
+        writeToFile(generateMarkdown(data))
    })
 }
 
