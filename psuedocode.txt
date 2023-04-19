@@ -1,0 +1,7 @@
+create index
+install npm inquierer
+add require fs and generatemarkdown and inquirer
+create questions
+add info to generate markdown function
+add if statements to questions
+look at speed operator
