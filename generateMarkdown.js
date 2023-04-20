@@ -11,10 +11,18 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license===null) {
-    license = '';
+  if (license===licenseArr[0]){
+    return `[${licenseArr[0]}](https://opensource.org/licenses/Apache-2.0)`
+  } else if (license===licenseArr[1]){
+    return `[${licenseArr[1]}](https://opensource.org/license/mit/)`
+  } else if (license===licenseArr[2]){
+    return `[${licenseArr[2]}](https://opensource.org/license/ms-pl-html/)`
+  } else if (license===licenseArr[3]){
+    return `[${licenseArr[3]}](https://opensource.org/license/gpl-2-0/)`
+  } else if (license===licenseArr[4]){
+    return `[${licenseArr[4]}](https://opensource.org/license/epl-2-0/)`
   } else {
-    return '[License](#license)';
+    return '';
   }
 }
 
@@ -24,7 +32,7 @@ function renderLicenseSection(license) {
   if (license===null) {
     license = '';
   } else {
-    return '## License';
+    return '## Licens';
   }
 }
 

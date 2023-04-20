@@ -101,7 +101,7 @@ const questions = [
     }
 },
 {//6                     LICENSE
-    type:'list',
+    type:'',
     message: 'Choose a license for your project (required).',
     name: 'license',
     choices: ['Apache', 'MIT', 'Ms-PL-Microsoft-Public', 'GNU-General-Public', 'CDDL-Common-Development-and-Distribution', 'EPL-EclipsePublic'],
