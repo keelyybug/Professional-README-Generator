@@ -41,7 +41,7 @@ THEN I am taken to the corresponding section of the README
 
 Below is a screenshot of a finished README using the application I created.
 
-![Finished README Screenshot](/assets/images/SS)
+![Finished README Screenshot](/SS.png)
 
 In order to do this, you will download the application in your terminal. To get started you just need to open a integrated terminal and enter the code 'node index'. you will then fill out the questions as prompted and a generated README will then show up in your folder! Dont forget to push it to your REPO!
 
