@@ -24,7 +24,7 @@ function renderLicenseSection(license) {
   if (license===null) {
     license = '';
   } else {
-    return '## Licensing';
+    return '## License';
   }
 }
 
@@ -35,13 +35,23 @@ function renderGitHubLink(userName){
     return `[${userName}](https://github.com/${userName})`
   }
 }
+
+function creditAppend(credit){
+  if (credit===false){
+    credit = '';
+  } else {
+    return `[${credit}](https://github.com/${credit})`;
+  }
+}
 // TODO: Create a function to generate markdown for README
 //if this doesnt work change data parameters to (description,instalation,usage,etc)
-function generateMarkdown({title,description,installation,usage,credits,license,features,test,userName,email,url}) {
+function generateMarkdown({title,description,installation,usage,credit,license,features,test,userName,email}) {
   return `
   # ${title}
 
   ${renderLicenseBadge(license)}
+
+  ${license}
 
   ## Description
   
@@ -66,8 +76,8 @@ function generateMarkdown({title,description,installation,usage,credits,license,
   ${usage}
   
   ## Credits
-  
-  ${credits}
+
+  ${creditAppend(credit)}
   
   ${renderLicenseSection(license)}
   
@@ -81,7 +91,7 @@ function generateMarkdown({title,description,installation,usage,credits,license,
 
   ${test}
 
-  ##Questions
+  ## Questions
 
   If you have any Questions and would like to reach me, my information is below!
   

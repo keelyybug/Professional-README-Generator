@@ -71,16 +71,8 @@ const questions = [
 },
 {//5
     type:'input',
-    message: 'What are some contribution guidlines for others looking to use your project',
-    name: 'credit',
-    validate: creditInput =>{
-        if (creditInput) {
-            return true;
-        } else {
-            console.log('Please give credit to all contributors!');
-            return false;
-        }
-    }
+    message: 'Did anyone else contribute to your project. If so, please provide their GitHub username.',
+    name: 'credit'
 },
 {//8
     type:'input',
@@ -109,10 +101,10 @@ const questions = [
     }
 },
 {//6                     LICENSE
-    type:'checkbox',
+    type:'list',
     message: 'Choose a license for your project (required).',
     name: 'license',
-    choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
+    choices: ['Apache', 'MIT', 'Ms-PL-Microsoft-Public', 'GNU-General-Public', 'CDDL-Common-Development-and-Distribution', 'EPL-EclipsePublic'],
     validate: licenseInput =>{
         if (licenseInput) {
             return true;
@@ -143,6 +135,7 @@ const questions = [
       if (contributionInput) {
         return true;
       } else {
+        console.log('Please input how someone could contribute to your project');
         return false;
       }
     }
