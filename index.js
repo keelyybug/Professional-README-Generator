@@ -101,10 +101,10 @@ const questions = [
     }
 },
 {//6                     LICENSE
-    type:'',
+    type:'list',
     message: 'Choose a license for your project (required).',
     name: 'license',
-    choices: ['Apache', 'MIT', 'Ms-PL-Microsoft-Public', 'GNU-General-Public', 'CDDL-Common-Development-and-Distribution', 'EPL-EclipsePublic'],
+    choices: ['Apache', 'MIT', 'GNU', 'CDDL', 'EPL', 'BSD'],
     validate: licenseInput =>{
         if (licenseInput) {
             return true;
