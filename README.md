@@ -39,7 +39,7 @@ THEN I am taken to the corresponding section of the README
 
 ## How To Use
 
-Below is a screenshot of a finished README using the application I created.
+Below is a screenshot of a finished README using the application I created. If you click [here](https://drive.google.com/file/d/1KshGOzs-F-3ypvu26bh642btcI4ifcZ2/view) it will take you to a video explaining how to use the application!
 
 ![Finished README Screenshot](/SS.png)
 
